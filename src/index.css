@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kid-friendly banking app with vibrant colors */
+
+@layer base {
+  :root {
+    /* Core colors */
+    --black: 0 0% 10%;
+    --dune: 20 4% 20%;
+    --white: 0 0% 100%;
+    --off-white: 45 100% 98%;
+    --gray: 0 0% 42%;
+    --light-gray: 0 0% 91%;
+
+    /* Vibrant kid-friendly semantic colors */
+    --green: 152 85% 45%;
+    --green-light: 152 70% 92%;
+    --red: 4 90% 58%;
+    --red-light: 4 100% 96%;
+    --orange: 28 100% 55%;
+    --purple: 270 70% 60%;
+    --pink: 330 85% 70%;
+    --pink-light: 330 100% 95%;
+
+    /* Map to shadcn tokens - warmer background */
+    --background: 45 100% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 152 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 96%;
+    --secondary-foreground: 270 70% 40%;
+
+    --muted: 45 40% 92%;
+    --muted-foreground: 0 0% 42%;
+
+    --accent: 28 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 30% 88%;
+    --input: 45 30% 88%;
+    --ring: 270 70% 60%;
+
+    --radius: 1rem;
+
+    /* Kid-friendly fun colors */
+    --success: 152 85% 45%;
+    --warning: 28 100% 55%;
+    --fun-yellow: 45 100% 60%;
+    --fun-blue: 200 100% 55%;
+    --fun-purple: 270 70% 60%;
+    --fun-pink: 330 85% 70%;
+    --fun-mint: 160 70% 65%;
+    --fun-coral: 15 90% 65%;
+
+    /* Gradient colors */
+    --gradient-start: 270 70% 60%;
+    --gradient-end: 200 100% 55%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 270 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 100% 98%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 45 30% 88%;
+    --sidebar-ring: 270 70% 60%;
+  }
+
+  .dark {
+    --background: 260 20% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 260 20% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 260 20% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 152 85% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 40% 20%;
+    --secondary-foreground: 270 70% 80%;
+
+    --muted: 260 20% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 28 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 90% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 20% 20%;
+    --input: 260 20% 20%;
+    --ring: 270 70% 60%;
+
+    --sidebar-background: 260 20% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 270 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 20% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 260 20% 20%;
+    --sidebar-ring: 270 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Money display typography */
+  .money-display {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--fun-purple)), hsl(var(--fun-blue)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--fun-purple)), hsl(var(--fun-blue)));
+  }
+  
+  .gradient-bg-warm {
+    background: linear-gradient(135deg, hsl(var(--fun-coral)), hsl(var(--fun-yellow)));
+  }
+  
+  .fun-shadow {
+    box-shadow: 0 4px 20px -4px hsl(var(--fun-purple) / 0.25);
+  }
+}
